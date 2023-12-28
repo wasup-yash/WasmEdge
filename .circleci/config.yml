@@ -1,0 +1,8 @@
+jobs:
+  hello:
+    machine:
+      image: wasmedge/wasmedge:manylinux2014_aarch64
+    resource_class: arm.medium
+    steps:
+      - run: uname -a
+      - run: echo "Hello, Arm!"
