@@ -1,3 +1,6 @@
+version: 2.1
+
+# Define the jobs we want to run for this project
 jobs:
   hello:
     machine:
@@ -6,3 +9,9 @@ jobs:
     steps:
       - run: uname -a
       - run: echo "Hello, Arm!"
+
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - hello
